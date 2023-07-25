@@ -1,0 +1,42 @@
+[
+    {
+        "username": "Anita Sharma",
+        "password": "teacher@123",
+        "type": "teacher"
+    },
+    {
+        "username": "Rajesh Singh",
+        "password": "teacher@123",
+        "type": "teacher"
+    },
+    {
+        "username": "Amit Patel",
+        "password": "teacher@123",
+        "type": "teacher"
+    },
+    {
+        "username": "Neha Choudhary",
+        "password": "teacher@123",
+        "type": "teacher"
+    },
+    {
+        "username": "Ishan Harkhani",
+        "password": "student@123",
+        "type": "student"
+    },
+    {
+        "username": "Jeel Parikh",
+        "password": "student@123",
+        "type": "student"
+    },
+    {
+        "username": "Parth Pandya",
+        "password": "student@123",
+        "type": "student"
+    },
+    {
+        "username": "Jay Mehta",
+        "password": "student@123",
+        "type": "student"
+    }
+]

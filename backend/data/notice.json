@@ -1,0 +1,97 @@
+[
+    {
+        "title": "Upcoming Sports Event",
+        "description": "There will be a sports event in the school playground next Friday. All students are encouraged to participate.",
+        "type": "sports"
+    },
+    {
+        "title": "Exam Schedule",
+        "description": "The final exams for this semester will start from 10th August. Please make sure to prepare well.",
+        "type": "exam"
+    },
+    {
+        "title": "Holiday Notice",
+        "description": "School will remain closed on 15th August due to Independence Day.",
+        "type": "holiday"
+    },
+    {
+        "title": "Parent-Teacher Meeting",
+        "description": "There will be a parent-teacher meeting on 20th August at 3:00 PM. Kindly attend to discuss your child's progress.",
+        "type": "meeting"
+    },
+    {
+        "title": "Scholarship Opportunity",
+        "description": "A scholarship opportunity for outstanding students is available. Interested candidates can apply before 31st August.",
+        "type": "scholarship"
+    },
+    {
+        "title": "Classroom Change",
+        "description": "Please note that the 9th-grade class will now be held in Room 203 instead of Room 105.",
+        "type": "class"
+    },
+    {
+        "title": "Annual Day Celebration",
+        "description": "The school's annual day will be celebrated on 5th September. Don't miss the exciting cultural performances!",
+        "type": "event"
+    },
+    {
+        "title": "Academic Excellence Awards",
+        "description": "The academic excellence awards ceremony will be held on 12th September to recognize outstanding achievements.",
+        "type": "academic"
+    },
+    {
+        "title": "General Notice",
+        "description": "Students are reminded to submit their project reports before the deadline.",
+        "type": "general"
+    },
+    {
+        "title": "Art Competition",
+        "description": "Calling all budding artists! An art competition will be held on 25th September. Get your creativity flowing!",
+        "type": "event"
+    },
+    {
+        "title": "School Picnic",
+        "description": "The annual school picnic will take place on 1st October. Don't forget to bring your picnic baskets and enjoy the day!",
+        "type": "event"
+    },
+    {
+        "title": "Math Olympiad",
+        "description": "Interested students can participate in the Math Olympiad. The competition will be held on 5th October.",
+        "type": "academic"
+    },
+    {
+        "title": "Basketball Tournament",
+        "description": "A basketball tournament will be organized from 10th to 15th October. Form your teams and register now!",
+        "type": "sports"
+    },
+    {
+        "title": "Teacher's Day Celebration",
+        "description": "On 15th October, we will celebrate Teacher's Day to honor our dedicated teachers. Students can show their appreciation with cards and gifts.",
+        "type": "event"
+    },
+    {
+        "title": "Mid-Term Break",
+        "description": "School will remain closed from 18th to 22nd October for the mid-term break. Enjoy your holidays!",
+        "type": "holiday"
+    },
+    {
+        "title": "Science Fair",
+        "description": "The annual science fair will be held on 30th October. Students can showcase their science projects and experiments.",
+        "type": "event"
+    },
+    {
+        "title": "Career Counseling Session",
+        "description": "A career counseling session will be conducted on 5th November. Experts will guide students on various career paths.",
+        "type": "academic"
+    },
+    {
+        "title": "Inter-School Debate Competition",
+        "description": "An inter-school debate competition will be hosted on 10th November. Prepare your arguments and represent our school!",
+        "type": "event"
+    },
+    {
+        "title": "Annual Sports Day",
+        "description": "Mark your calendars for the Annual Sports Day on 20th November. Get ready for a day filled with fun and sportsmanship!",
+        "type": "sports"
+    }
+]

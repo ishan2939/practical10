@@ -10,8 +10,11 @@ const Router = express.Router();
 /* Login */
 Router.route('/login').post(checkJWT.isNotLoggedIn, authController.login);
 
+/* If token is valid */
+Router.route('/istokenvalid').post(checkJWT.isTokenValid);
+
 /* notice controller */
-Router.route('/getallnotices').get(checkJWT.isStudent, notice.getNotices);
+Router.route('/getallnotices').get(notice.getNotices);
 
 Router.route('/getnoticebyid/:noticeId').get(checkJWT.isTeacher, notice.getNoticeById);
 

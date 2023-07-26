@@ -10,7 +10,7 @@ exports.getNotices = async (req, res) => {
 
         const notices = await Notice.find().populate('publisher', { 'username': 1, _id: 0 });
 
-        return res.status(400).json({ status: 'success', message: 'notices found successfully.', data: notices });
+        return res.status(200).json({ status: 'success', message: 'notices found successfully.', data: JSON.stringify(notices) });
 
     } catch (err) {
         console.log(err);
@@ -26,7 +26,7 @@ exports.getNotices = async (req, res) => {
 exports.getNoticeById = async (req, res) => {
     try {
 
-        const notice = await Notice.findById(req.params.id);
+        const notice = await Notice.findById(req.params.noticeId);
 
         return res.status(400).json({ status: 'success', message: 'notice found successfully.', data: notice });
 
@@ -40,7 +40,7 @@ exports.getNoticeById = async (req, res) => {
 exports.getNoticesByPublisherId = async (req, res) => {
     try {
 
-        const notices = await Notice.find({ publisher: req.params.publisherId });
+        const notices = await Notice.find({ publisher: req.params.publisherId }, {"publisher": 0, "updatedAt": 0});
 
         return res.status(400).json({ status: 'success', message: 'notices found successfully.', data: notices });
 
@@ -54,7 +54,8 @@ exports.getNoticesByPublisherId = async (req, res) => {
 exports.addNotice = async (req, res) => {
     try {
 
-        const newNotice = await new Notice(req.body.notice);
+        const newNotice = await Notice.create(req.body);
+        console.log(newNotice);
 
         return res.status(400).json({ status: 'success', message: 'notices added successfully.' });
 

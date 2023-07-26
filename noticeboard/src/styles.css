@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url('./assets/bg1.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    user-select: none;
+    height: 100vh;
+}
+
+app-list-notices{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}

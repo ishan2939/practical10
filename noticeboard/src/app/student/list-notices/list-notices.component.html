@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <div class="message">
+                Welcome, Ishan harkhani
+            </div>
+            <div class="icon">
+                <div class="inintials">IH</div>
+            </div>
+        </div>
+        <div class="parts">
+
+            <div class="part1">
+                <div class="search-sort-section">
+                    <input type="search" placeholder="Enter notice title here...">
+                </div>
+                <div class="notices">
+                    <div class="notice" *ngFor="let notice of notices">
+                        {{notice.type}}
+                    </div>
+                </div>
+            </div>
+            <div class="part2"></div>
+        </div>
+    </div>
+
+</div>

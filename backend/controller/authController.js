@@ -19,7 +19,7 @@ exports.login = async (req, res) => {
         }
 
         const userExists = await User.findOne({ username: username });  //get user with entered username
-        
+
         if (userExists) {   //if user exists
 
             if (password == userExists.password) {  //if they match
@@ -30,7 +30,9 @@ exports.login = async (req, res) => {
                     { expiresIn: "2d" }
                 );
 
-                return res.status(200).json({status: 'success', message: 'Logged In successfully.', data: {user: userExists, token: token}});
+                const user= {_id: userExists._id, username: userExists.username, type: userExists.type};
+
+                return res.status(200).json({ status: 'success', message: 'Logged In successfully.', data: { user: user, token: token } });
             }
             throw new Error('Invalid credentials');
         }
@@ -38,6 +40,6 @@ exports.login = async (req, res) => {
     }
     catch (err) { //handle error
         console.log(err);
-        return res.status(400).json({status: 'error', message: err.message});
+        return res.status(400).json({ status: 'error', message: err.message });
     }
 };

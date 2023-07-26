@@ -1,0 +1,71 @@
+.container{
+    width: 80%;
+    padding: 20px;
+    background: linear-gradient(to right, #FEF0F0, #EAF2FF);
+    border-style: solid;
+    border-width: 2px 6px 6px 2px;
+    border-color: #1f2433;
+    border-radius: 10px;
+}
+
+.container .dots{
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.container .dots span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #1f2433;
+    border-radius: 50%;
+}
+
+.container .content{
+    background: #fff;
+    border-radius: 10px;
+}
+
+.container .content .header{
+    display: flex;
+    padding: 30px 20px;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+.container .content .header .message{
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.container .content .header .icon{
+    width: 40px;
+    height: 40px;
+    background: #EAF2FF;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 3px solid #1f2433; */
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.container .content .parts{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content .parts .part1{
+    width: 80%;
+}
+
+.container .content .parts .part2{
+    width: 20%;
+    background: #1f2433;
+}

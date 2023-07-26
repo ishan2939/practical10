@@ -5,29 +5,41 @@ const dotenv = require('dotenv');
 
 dotenv.config({path: path.join(__dirname, '..', 'config', '.env')});
 
+const User = require('../models/user');
+
+function verifyToken(token){
+    return jwt.verify(token, process.env.SECRET_KEY);
+}
+
 function getUserType(token){
-    const decodedToken = jwt.verify(token, process.env.SECRET_KEY);  //verify the token
+    const decodedToken = verifyToken(token); //verify the token
     return decodedToken.type;
 }
 
-// exports.isLoggedIn = (req, res, next) => {
-//     try{
-//         const token = (req.cookies['token'])?req.cookies['token'].token:undefined;   //get token
-        
-//         if(token) //if it doesn't exists then let user login
-//             next();
-//         else
-//             throw new Error("User is already logged in");
-//     }
-//     catch(err){
-//         return res.status(400).json({status: 'error', message: err.message});
-//     }
+exports.isTokenValid = async (req, res, next) => {
+    try{
+        const token = req.body.token;   //get token
+        if(!token)
+            throw Error();
 
-// };
+        const user_id = verifyToken(token).user_id; //verify if token is valid
+
+        const user = await User.findOne({_id: user_id}); //if token is valid then check if user is valid
+
+        if(user) //if everything is ok then send valid response
+            return res.status(200).json({status: 'valid', message: 'token is valid.'});
+        else    //send response that token is invalid
+            throw new Error();
+    }
+    catch(err){
+        return res.status(400).json({status: 'Invalid', message: 'Token is not valid.'});
+    }
+
+};
 
 //check if user allowed to access login page
 exports.isNotLoggedIn = (req, res, next) => {
-    const token = req.body.token || req.query.token || req.headers["x-access-token"] || (req.cookies['token'])?req.cookies['token'].token:undefined;   //get token
+    const token = req.body.token;   //get token
 
     try{
         
@@ -44,7 +56,7 @@ exports.isNotLoggedIn = (req, res, next) => {
 exports.isStudent = (req, res, next) => { 
 
     try{    
-        const token = req.body.token || req.query.token || req.headers["x-access-token"] || (req.cookies['token'])?req.cookies['token'].token:undefined;   //get token
+        const token = req.body.token;   //get token
 
         if(getUserType(token)=='student')
             next();
@@ -60,7 +72,7 @@ exports.isStudent = (req, res, next) => {
 exports.isTeacher = (req, res, next) => { 
 
     try{    
-        const token = req.body.token || req.query.token || req.headers["x-access-token"] || (req.cookies['token'])?req.cookies['token'].token:undefined;   //get token
+        const token = req.body.token;   //get token
 
         if(getUserType(token)=='teacher')
             next();

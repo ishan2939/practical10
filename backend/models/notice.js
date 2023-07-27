@@ -22,7 +22,11 @@ const noticeSchema = new mongoose.Schema({
         type: String,
         enum: ['class', 'exam', 'event', 'holiday', 'general', 'academic', 'sports', 'scholarship', 'meeting'],
         default: 'general'
-    }
+    },
+    likes: [{
+        type: mongoose.Types.ObjectId,
+        ref: "user"
+    }]
 }, {timestamps: true});
 
 module.exports = mongoose.model("notice", noticeSchema);

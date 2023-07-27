@@ -25,4 +25,7 @@ Router.route('/updatenotice/:noticeId').put(checkJWT.isTeacher, notice.updateNot
 Router.route('/deletenotice/:noticeId').delete(checkJWT.isTeacher, notice.deleteNotice);
 
 
+Router.route('/addlike/:noticeId').post(notice.addLike);
+Router.route('/removelike/:noticeId').post(notice.removeLike);
+
 module.exports = Router;    

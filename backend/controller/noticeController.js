@@ -92,3 +92,44 @@ exports.deleteNotice = async (req, res) => {
         return res.status(400).json({ status: 'error', message: err.message });
     }
 };
+
+
+/* Add like */
+
+exports.addLike = async(req, res) => {
+    try{
+
+        const notice = await Notice.findById(req.params.noticeId);
+
+        if(!notice)
+            throw new Error("No such notice exists");
+
+        if(notice.likes.includes(req.body.userId))
+            return res.status(200).send();
+        
+        await Notice.findByIdAndUpdate(req.params.noticeId, {$push: { likes: req.body.userId}}, {new: true});
+
+        return res.status(200).json({ status: 'success', message: 'Like added successfully.' });
+    }catch(err){
+        console.log(err);
+        return res.status(400).json({ status: 'error', message: err.message });
+    }
+};
+
+
+exports.removeLike = async(req, res) => {
+    try{
+
+        const notice = await Notice.findById(req.params.noticeId);
+
+        if(!notice)
+            throw new Error("No such notice exists");
+
+        await Notice.findByIdAndUpdate(req.params.noticeId, {$pull: { likes: req.body.userId}}, {new: true});
+
+        return res.status(200).json({ status: 'success', message: 'Like removed successfully.' });
+    }catch(err){
+        console.log(err);
+        return res.status(400).json({ status: 'error', message: err.message });
+    }
+};

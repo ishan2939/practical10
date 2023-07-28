@@ -42,15 +42,45 @@
 }
 
 .container .content .header .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 25px;
+}
+
+
+.container .content .header .icon .add,
+.container .content .header .icon .initials {
     width: 40px;
     height: 40px;
-    background: #EAF2FF;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     font-weight: bold;
+}
+
+.container .content .header .icon .add {
+    background: #1f2433;
+    transition: .3s;
+}
+
+.container .content .header .icon .add:hover {
+    transform: scale(1.1);
+}
+
+.container .content .header .icon .add .addIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.container .content .header .icon .initials {
+    background: #EAF2FF;
 }
 
 .container .content .parts {
@@ -71,7 +101,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    row-gap: 20px;
+    row-gap: 30px;
     min-height: 500px;
     max-height: 500px;
     overflow-y: auto;
@@ -82,14 +112,33 @@
     display: none;
 }
 
-.container .content .parts .part1 .notices .notice {
+.container .content .parts .part1 .notices .myNotices,
+.container .content .parts .part1 .notices .otherNotices {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+}
+
+.container .content .parts .part1 .notices .myNotices .sectionTitle,
+.container .content .parts .part1 .notices .otherNotices .sectionTitle {
+    width: 100%;
+    font-size: 18px;
+    color: grey;
+}
+
+.container .content .parts .part1 .notices .myNotices .notice,
+.container .content .parts .part1 .notices .otherNotices .notice {
     width: 100%;
     padding: 20px;
     border: 3px solid #EAF2FF;
     border-radius: 20px;
 }
 
-.container .content .parts .part1 .notices .notice .noticeheader {
+.container .content .parts .part1 .notices .myNotices .notice .noticeheader,
+.container .content .parts .part1 .notices .otherNotices .notice .noticeheader {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -97,38 +146,53 @@
     font-size: 14px;
 }
 
-.container .content .parts .part1 .notices .notice .noticeheader .typeIcon {
+.container .content .parts .part1 .notices .myNotices .notice .noticeheader .typeIcon,
+.container .content .parts .part1 .notices .otherNotices .notice .noticeheader .typeIcon {
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+}
+.container .content .parts .part1 .notices .myNotices .notice .noticeheader .typeIcon div,
+.container .content .parts .part1 .notices .otherNotices .notice .noticeheader .typeIcon div {
     width: 25px;
     height: 25px;
     background: #1f2433;
     border-radius: 5px;
-    color: #fff;
-    font-size: 14px;
+    padding: 5px;
+    /* background: #fbb55b; */
+    background: #ffc6c6;
 }
 
-.container .content .parts .part1 .notices .notice .noticeheader .title {
+.container .content .parts .part1 .notices .myNotices .notice .noticeheader .typeIcon div .typeImg,
+.container .content .parts .part1 .notices .otherNotices .notice .noticeheader .typeIcon div .typeImg {
+    width: 17px;
+}
+
+.container .content .parts .part1 .notices .myNotices .notice .noticeheader .title,
+.container .content .parts .part1 .notices .otherNotices .notice .noticeheader .title {
     text-transform: capitalize;
 }
 
-.container .content .parts .part1 .notices .notice .noticeheader .publisher {
+.container .content .parts .part1 .notices .myNotices .notice .noticeheader .publisher,
+.container .content .parts .part1 .notices .otherNotices .notice .noticeheader .publisher {
     padding: 4px 15px;
     border-radius: 30px;
     background-color: #FEF0F0;
 }
 
-.container .content .parts .part1 .notices .notice .noticetitle{
+.container .content .parts .part1 .notices .myNotices .notice .noticetitle,
+.container .content .parts .part1 .notices .otherNotices .notice .noticetitle {
     font-size: 20px;
     margin: 15px 0px 10px 0px;
 }
 
-.container .content .parts .part1 .notices .notice .noticedesc{
+.container .content .parts .part1 .notices .myNotices .notice .noticedesc,
+.container .content .parts .part1 .notices .otherNotices .notice .noticedesc {
     font-size: 14px;
 }
 
-.container .content .parts .part1 .notices .notice .noticefooter{
+.container .content .parts .part1 .notices .myNotices .notice .noticefooter,
+.container .content .parts .part1 .notices .otherNotices .notice .noticefooter {
     width: 100%;
     margin-top: 15px;
     display: flex;
@@ -139,26 +203,39 @@
     color: grey
 }
 
-.container .content .parts .part1 .notices .notice .noticefooter .like{
+.container .content .parts .part1 .notices .myNotices .notice .noticefooter .options {
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 10px;
-    border: 2px solid #EAF2FF;
-    padding: 3px 5px;
-    border-radius: 7px;
-    cursor: pointer;
 }
 
-.container .content .parts .part1 .notices .notice .noticefooter .like .likeIcon{
+.container .content .parts .part1 .notices .myNotices .notice .noticefooter .options a,
+.container .content .parts .part1 .notices .myNotices .notice .noticefooter .options button {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 14px;
     transition: .3s;
+    padding: 3px 5px;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.container .content .parts .part1 .notices .notice .noticefooter .like:hover{
+.container .content .parts .part1 .notices .myNotices .notice .noticefooter .options .edit {
+    border: 2px solid rgba(62, 193, 236, 0.5);
+    background: rgb(234, 242, 255, 0.3);
+    color: rgb(62, 193, 236);
+}
+
+.container .content .parts .part1 .notices .myNotices .notice .noticefooter .options .delete {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: rgb(255, 0, 0, 0.2) !important;
+    color: rgb(255, 0, 0, 0.7);
+}
+
+.container .content .parts .part1 .notices .myNotices .notice .noticefooter .options button:hover {
     transform: scale(1.05);
 }
 
@@ -170,7 +247,8 @@
     justify-content: center;
     align-items: center;
 }
-.container .content .parts .part2 .image{
+
+.container .content .parts .part2 .image {
     width: 90%;
     display: flex;
     justify-content: center;
@@ -178,29 +256,20 @@
     /* animation: float 2s ease-in-out infinite; */
 }
 
-.container .content .parts .part2 .image img{
+.container .content .parts .part2 .image img {
     width: 700px;
 }
 
 @keyframes float {
-    0%{
+    0% {
         transform: translateY(0px);
     }
-    50%{
+
+    50% {
         transform: translateY(-15px);
     }
-    100%{
+
+    100% {
         transform: translateY(0px);
     }
-}
-
-.active{
-    background: rgba(255, 0, 0, 0.1);
-    border-color: rgb(255, 0, 0, 0.2) !important;
-    color: rgb(255, 0, 0) ;
-}
-
-.sort{
-    background: #1f2433 !important;
-    color: #fff !important;
 }

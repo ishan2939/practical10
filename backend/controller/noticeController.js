@@ -10,6 +10,7 @@ exports.getNotices = async (req, res) => {
 
         const notices = await Notice.find().populate('publisher', { 'username': 1, _id: 0 });
 
+        console.log(notices);
         return res.status(200).json({ status: 'success', message: 'notices found successfully.', data: JSON.stringify(notices) });
 
     } catch (err) {

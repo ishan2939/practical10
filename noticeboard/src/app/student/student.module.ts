@@ -3,19 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { StudentRoutingModule } from './student-routing.module';
 import { ListNoticesComponent } from './list-notices/list-notices.component';
-import { GetInitialsPipe } from '../initials.pipe';
-import { TimeAgoPipe } from '../timeago.pipe';
+import { SharedModule } from '../shared.module';
 
 
 @NgModule({
   declarations: [
-    ListNoticesComponent,
-    GetInitialsPipe,
-    TimeAgoPipe
+    ListNoticesComponent
   ],
   imports: [
     CommonModule,
-    StudentRoutingModule
+    StudentRoutingModule,
+    SharedModule
   ]
 })
 export class StudentModule { }

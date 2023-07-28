@@ -15,9 +15,13 @@ body{
     height: 100vh;
 }
 
-app-list-notices{
+app-list-notices,
+app-view-notices,
+app-add-notices,
+app-update-notices{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
+

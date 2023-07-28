@@ -5,7 +5,7 @@ import { PublisherRoutingModule } from './publisher-routing.module';
 import { ViewNoticesComponent } from './view-notices/view-notices.component';
 import { AddNoticesComponent } from './add-notices/add-notices.component';
 import { UpdateNoticesComponent } from './update-notices/update-notices.component';
-import { GetInitialsPipe } from '../initials.pipe';
+import { SharedModule } from '../shared.module';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { GetInitialsPipe } from '../initials.pipe';
   ],
   imports: [
     CommonModule,
-    PublisherRoutingModule
+    PublisherRoutingModule,
+    SharedModule
   ]
 })
 export class PublisherModule { }
